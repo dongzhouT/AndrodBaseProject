@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="44dp"
-    android:background="@color/colorMain"
-    android:orientation="vertical">
+    android:background="#fff"
+    android:elevation="@dimen/elevation_height">
 
     <ImageView
-        android:id="@+id/iv_back"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
+        android:id="@+id/iv_head_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:scaleType="center"
-        android:src="@drawable/ic_back" />
+        android:src="@drawable/btn_back_black" />
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/tv_head_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="title"
-        android:textColor="#fff"
-        android:textSize="18sp" />
+        android:text=""
+        android:textColor="#000"
+        android:textSize="17dp"
+        tools:text="标题" />
 
+    <TextView
+        android:id="@+id/tv_head_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:text="标题"
+        android:textColor="@drawable/right_txt_color"
+        android:textSize="15dp" />
 </RelativeLayout>

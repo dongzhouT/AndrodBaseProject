@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="colorMain">#1D79EB</color>
-    <color name="bgGrayColor">#F2F2F2</color>
-    <color name="divideLine">#E2E2E2</color>
-    <color name="colorTxtRed">#E53D3D</color>
+    <color name="colorPrimary">#317CFD</color>
+    <color name="colorPrimaryDark">#4168B2</color>
+    <color name="colorAccent">#317CFD</color>
+    <color name="colorMain">#317CFD</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBtnDisable">#769EE8</color>
+    <color name="colorBtnNormal">#4D7CD4</color>
+    <color name="colorBtnPressed">#4168B2</color>
     <color name="colorBtnGrayNormal">#979BA3</color>
     <color name="colorBtnGrayPressed">#7F8289</color>
+    <color name="colorTxtBlue">#4D7CD4</color>
+    <color name="colorTxtLightBlue">#26C7DB</color>
+    <color name="colorTxtBluePressed">#4168b2</color>
+    <color name="colorTxtBlack">#666666</color>
+    <color name="colorTxtLight">#BCBCBC</color>
+    <color name="colorTxtRed">#E53D3D</color>
+    <color name="colorTxtRedPressed">#C03333</color>
+    <color name="colorDivide">#E4E4E4</color>
+    <color name="colorBackground">#F4F4F4</color>
+    <color name="colorCancelPressed">#6B6B6B</color>
+    <color name="colorCancel">#808080</color>
+    <color name="colorTxtHint">#808080</color>
+    <color name="bgGrayColor">#F2F2F2</color>
+    <color name="divideLine">#E2E2E2</color>
+    <color name="colorBgPress">#EAEAEA</color>
+    <color name="colorMask">#66000000</color>
+    <color name="textBg">#aaaaaa</color>
+    <color name="textTitle">#333333</color>
+    <color name="replyTextBg">#f7f7f7</color>
     <!-- QRCode scanner color begin -->
     <color name="viewfinder_mask">#60000000</color>
     <color name="result_view">#B0000000</color>
@@ -16,4 +36,5 @@
     <color name="result_point_color">#C0FFFF00</color>
     <color name="laser_color">#0F0</color>
     <color name="corner_color">#018BB0</color>
+    <color name="transparent">#00000000</color>
 </resources>

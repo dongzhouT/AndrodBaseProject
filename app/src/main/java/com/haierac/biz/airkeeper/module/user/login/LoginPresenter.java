@@ -1,6 +1,7 @@
 package com.haierac.biz.airkeeper.module.user.login;
 
 import com.haierac.biz.airkeeper.base.BaseObserver;
+import com.haierac.biz.airkeeper.base.ObserverHandler;
 import com.haierac.biz.airkeeper.net.RetrofitManager;
 import com.haierac.biz.airkeeper.net.RxSchedulers;
 import com.haierac.biz.airkeeper.net.entity.HaierBaseResultBean;
@@ -24,7 +25,7 @@ public class LoginPresenter implements LoginContract.Presenter {
         mView.showLoading();
         RetrofitManager.getApiService().login(name, pass)
                 .compose(RxSchedulers.applySchedulers(mView))
-                .subscribe(new BaseObserver<HaierBaseResultBean>() {
+                .subscribe(new ObserverHandler(mView) {
                     @Override
                     public void onSuccess(HaierBaseResultBean bean) {
                         mView.success(bean.retCode);

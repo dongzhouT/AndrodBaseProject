@@ -16,6 +16,8 @@ public abstract class BaseObserver<T extends HaierBaseResultBean> implements Obs
 
     abstract public void onNetError(Throwable e);
 
+    abstract public void onTokenInvalid();
+
     @Override
     public void onSubscribe(Disposable d) {
 
@@ -23,8 +25,11 @@ public abstract class BaseObserver<T extends HaierBaseResultBean> implements Obs
 
     @Override
     public void onNext(T t) {
+        // TODO: 2019/5/24 token失效统一处理
         if (t.ok()) {
             onSuccess(t);
+        } else if (t.tokenInvalid()) {
+            onTokenInvalid();
         } else {
             onFail(t.retCode, t.retInfo);
         }

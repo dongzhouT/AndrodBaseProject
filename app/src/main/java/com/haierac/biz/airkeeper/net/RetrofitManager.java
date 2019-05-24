@@ -50,6 +50,7 @@ public class RetrofitManager {
     private static volatile OkHttpClient mOkHttpClient;
 
     private static ApiService mApiService;
+    private static CommentService mCommService;
 
     /**
      * 云端响应头拦截器，用来配置缓存策略
@@ -303,5 +304,17 @@ public class RetrofitManager {
             mApiService = create(ApiService.class);
         }
         return mApiService;
+    }
+
+    /**
+     * 登录注册类接口
+     *
+     * @return
+     */
+    public static CommentService getCommService() {
+        if (mCommService == null) {
+            mCommService = create(CommentService.class);
+        }
+        return mCommService;
     }
 }

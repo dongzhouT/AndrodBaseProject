@@ -2,6 +2,7 @@ package com.haierac.biz.airkeeper.base;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,8 +15,11 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.SizeUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.haierac.biz.airkeeper.R;
+import com.haierac.biz.airkeeper.module.user.login.LoginActivity_;
+import com.haierac.biz.airkeeper.persistence.SDKPref_;
 import com.haierac.biz.airkeeper.utils.Loading;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -23,6 +27,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.sharedpreferences.Pref;
 
 import io.reactivex.ObservableTransformer;
 
@@ -32,15 +37,20 @@ import io.reactivex.ObservableTransformer;
  */
 @EActivity
 public abstract class BaseActivity extends RxAppCompatActivity implements IBaseView {
-    @ViewById(R.id.tv_title)
+    @ViewById(R.id.tv_head_title)
     public TextView tvTitle;
-    @ViewById(R.id.iv_back)
+    @ViewById(R.id.iv_head_back)
     public ImageView ivBack;
-    @ViewById(R.id.layout_header)
+    @ViewById(R.id.tv_head_right)
+    public TextView tvRight;
+    @ViewById(R.id.layout_head)
     public RelativeLayout layoutHeader;
 
+    @Pref
+    public SDKPref_ prefBase;
 
-    @Click(R.id.iv_back)
+
+    @Click(R.id.iv_head_back)
     public void onClickBack() {
         finish();
     }
@@ -48,7 +58,7 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseV
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusColor(getResources().getColor(R.color.colorMain));
+        setStatusColor(getResources().getColor(R.color.colorWhite));
     }
 
     /**
@@ -114,8 +124,30 @@ public abstract class BaseActivity extends RxAppCompatActivity implements IBaseV
     }
 
     @Override
+    public void showLoading(String msg) {
+        Loading.show(this, msg);
+    }
+
+    @Override
     public void hideLoading() {
         Loading.close();
+    }
+
+    @Override
+    public void showWarnMsg(String msg) {
+        ToastUtils.showShort(msg);
+    }
+
+    @Override
+    public void showWarnMsg(int textResId) {
+        ToastUtils.showShort(textResId);
+    }
+
+    @Override
+    public void onTokenInvalid() {
+        ToastUtils.showShort("用户身份已过期，请重新登录");
+        prefBase.accessToken().put("");
+        LoginActivity_.intent(this).start();
     }
 
     public void setHeaderVisiable(int visibility) {

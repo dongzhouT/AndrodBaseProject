@@ -80,7 +80,7 @@ public class WelcomeActivity extends RxAppCompatActivity {
      * 开启倒计时
      */
     private void startTimer() {
-        Observable.interval(1, TimeUnit.SECONDS).take(5)
+        Observable.interval(1, TimeUnit.SECONDS).take(3)
                 .compose(bindToLifecycle())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

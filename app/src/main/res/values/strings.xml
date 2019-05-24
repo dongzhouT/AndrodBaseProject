@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">AirKeeperAndroid</string>
+    <string name="app_name">空气管家</string>
+    <string name="string_logout_desc">%ds后自动登出，请重新登录</string>
+    <string name="string_my_device">%d台设备</string>
+    <string name="string_pass_notice">请设置6-20位字母加数字组合密码</string>
+    <string name="string_pass_invalid">您输入的密码有误，请输入6-20位字母加数字密码！</string>
+    <string name="string_indoor_temp">当前温度 %s</string>
+    <string name="string_official_url">vrf.eplusplatform.com</string>
+    <string name="string_mid_line">— —</string>
+    <string name="add_device">添加设备</string>
+    <string name="input_code">请输入条形码数字</string>
+    <string name="scan_code_tips">识别不到？戳我手动输入</string>
+    <string name="string_reply_tel_content">123xxxx3333:回复内容回复内容回复内容回复内容</string>
+    <string name="string_delete_warn">删除评论后，评论下所有的回复都会被删除。请确定是否删除评论？</string>
+    <string name="string_delete_reply_warn">请确定是否删除此回复？</string>
+    <string name="string_comment_num">%d条</string>
+    <string name="string_send_hint">有什么想说的呢？</string>
+    <string name="string_no_more_reply">没有更多了~~</string>
+    <string name="string_no_more_comt">没有更多了~~</string>
+    <string name="string_no_empty_comt">没有数据~~</string>
+    <string name="string_eng_position">职位：%s</string>
+    <string name="string_who_reply_mine">回复我的评论：%s</string>
+    <string name="string_comt_success">发表评论成功！</string>
+    <string name="string_delete_reply_ok">删除回复成功！</string>
+    <string name="string_delete_comt_ok">删除评论成功！</string>
+    <string name="string_cant_del_comt">不能删除别人的评论！</string>
+    <string name="string_cant_del_reply">不能删除别人的回复！</string>
+    <string name="string_blank_comt">发送内容不能为空~~</string>
+    <string name="string_sending">发送中...</string>
+    <string name="string_countdown_goback">%d秒后自动返回上一页</string>
+    <string name="string_loading_msg">加载中</string>
+    <string name="string_load_alldata">已加载全部数据</string>
+    <string name="string_load_more">上滑加载更多</string>
+    <string name="string_skip">跳过 %dS</string>
 </resources>

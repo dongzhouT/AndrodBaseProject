@@ -37,6 +37,10 @@ public class HaierBaseResultBean {
         return "000000".equals(retCode);
     }
 
+    public boolean tokenInvalid() {
+        return "112233".equals(retCode);
+    }
+
     public String getRetCode() {
         return retCode;
     }

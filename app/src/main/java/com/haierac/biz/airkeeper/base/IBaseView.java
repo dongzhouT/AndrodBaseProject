@@ -11,5 +11,13 @@ public interface IBaseView {
 
     void showLoading();
 
+    void showLoading(String msg);
+
     void hideLoading();
+
+    void showWarnMsg(String msg);
+
+    void showWarnMsg(int textResId);
+
+    void onTokenInvalid();
 }

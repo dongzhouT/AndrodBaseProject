@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_forget_pass"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".module.user.login.LoginActivity">
+    android:orientation="vertical">
 
     <include
         android:id="@+id/layout_head"
@@ -29,7 +28,7 @@
 
         <View
             android:id="@+id/mobile_divide"
-            android:layout_width="1dp"
+            android:layout_width="1px"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
@@ -37,7 +36,7 @@
             android:background="@color/colorDivide" />
 
         <EditText
-            android:id="@+id/edt_login_mobile"
+            android:id="@+id/edt_username"
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="60dp"
@@ -51,7 +50,41 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="1px"
+        android:background="@color/colorDivide" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:background="@color/colorWhite">
+
+        <EditText
+            android:id="@+id/edt_verify_code"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="60dp"
+            android:background="@null"
+            android:hint="请输入验证码"
+            android:maxLength="6"
+            android:textColorHint="@color/colorTxtLight"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btn_sms_code"
+            android:layout_width="85dp"
+            android:layout_height="29dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bg_btn_sms_code"
+            android:text="获取验证码"
+            android:textColor="@drawable/color_btn_sms_code"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
         android:background="@color/colorDivide" />
 
     <LinearLayout
@@ -60,50 +93,36 @@
         android:background="@color/colorWhite">
 
         <EditText
-            android:id="@+id/edt_login_password"
+            android:id="@+id/edt_password"
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="60dp"
             android:background="@null"
-            android:hint="请输入密码"
+            android:hint="请输入新密码"
             android:inputType="textPassword"
             android:textColorHint="@color/colorTxtLight"
             android:textSize="15dp" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tv_forget_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/string_pass_notice"
+        android:textColor="#aaa"
+        android:textSize="10dp" />
+
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_forget_pass"
         android:layout_width="match_parent"
         android:layout_height="@dimen/btn_height"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
+        android:layout_marginTop="18dp"
         android:background="@drawable/bg_btn_blue"
-        android:text="登录"
+        android:text="确定"
         android:textColor="@color/colorWhite" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            android:id="@+id/tv_forget_pass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="20dp"
-            android:text="忘记密码"
-            android:textColor="@drawable/cancle_txt" />
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/tv_testenv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试服"
-        android:visibility="gone" />
-
-
 </LinearLayout>
